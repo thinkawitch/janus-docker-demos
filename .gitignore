@@ -1,0 +1,7 @@
+docker-logs/*
+!docker-logs/.gitkeep
+docker-containers/ssl-certs/*
+!docker-containers/ssl-certs/.gitkeep
+.idea/
+.env
+janus-gateway/

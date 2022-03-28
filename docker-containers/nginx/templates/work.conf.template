@@ -1,0 +1,15 @@
+server {
+
+    ssl_certificate deploy/ssl-certs/cc.lan.crt;
+    ssl_certificate_key deploy/ssl-certs/cc.lan.key;
+
+    listen 443 ssl http2;
+    #resolver 127.0.0.11 valid=30s;
+
+    server_name ${WORK_DOMAIN};
+
+    access_log  /var/log/nginx/${WORK_DOMAIN}.access.log;
+    error_log  /var/log/nginx/${WORK_DOMAIN}.error.log info;
+
+    root  /usr/src/${WORK_DOMAIN}/;
+}

@@ -9,7 +9,7 @@
 
 
 ### Usage
-1. Open demo app in browser `ie. https://WEB_DOMAIN/echotest.html`
+1. Open demo app in browser `ie. https://DEMO_DOMAIN/echotest.html`
 2. Set `server` var to use websockets in console
 3. Start the demo
 

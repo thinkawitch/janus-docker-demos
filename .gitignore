@@ -5,3 +5,4 @@ docker-containers/ssl-certs/*
 .idea/
 .env
 janus-gateway/
+work/js/janus.js

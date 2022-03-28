@@ -295,6 +295,11 @@ nat: {
 	# this will cause ICE to fail if mDNS is the only way to connect!
 	#ignore_mdns = true
 
+    # andrew
+	#ignore_mdns = true
+	stun_server = "openrelay.metered.ca"
+    stun_port = 80
+
 	# In case you're deploying Janus on a server which is configured with
 	# a 1:1 NAT (e.g., Amazon EC2), you might want to also specify the public
 	# address of the machine using the setting below. This will result in
@@ -326,6 +331,13 @@ nat: {
 	#turn_type = "udp"
 	#turn_user = "myuser"
 	#turn_pwd = "mypassword"
+
+    # https://www.metered.ca/tools/openrelay/
+	#turn_server = "openrelay.metered.ca"
+	#turn_port = 443
+	#turn_type = "tcp"
+	#turn_user = "openrelayproject"
+    #turn_pwd = "openrelayproject"
 
 	# You can also make use of the TURN REST API to get info on one or more
 	# TURN services dynamically. This makes use of the proposed standard of

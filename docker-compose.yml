@@ -29,9 +29,12 @@ services:
       - "${EXPOSE_IP}:80:80"
       - "${EXPOSE_IP}:443:443"
     environment:
-      - WEB_DOMAIN
+      - DEMO_DOMAIN
+      - WORK_DOMAIN
     volumes:
-      - "./janus-gateway/html:/usr/src/${WEB_DOMAIN}"
+      - "./janus-gateway/html:/usr/src/${DEMO_DOMAIN}" # demos
+      - "./work:/usr/src/${WORK_DOMAIN}" # work
+      - "./janus-gateway/html/janus.js:/usr/src/${WORK_DOMAIN}/js/janus.js:ro" # js api for work
       - ./docker-containers/ssl-certs:/etc/nginx/deploy/ssl-certs
       - ./docker-containers/nginx/templates:/etc/nginx/templates
       - ./docker-logs/nginx/log:/var/log/nginx

@@ -298,7 +298,7 @@ nat: {
     # andrew
 	#ignore_mdns = true
 	stun_server = "openrelay.metered.ca"
-    stun_port = 80
+	stun_port = 80
 
 	# In case you're deploying Janus on a server which is configured with
 	# a 1:1 NAT (e.g., Amazon EC2), you might want to also specify the public

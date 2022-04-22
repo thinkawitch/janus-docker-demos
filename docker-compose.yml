@@ -4,7 +4,7 @@ services:
   #
   # janus-gateway
   janus-gateway:
-    image: canyan/janus-gateway:0.10.7
+    image: canyan/janus-gateway:master
     command: ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
     ports:
       - "${EXPOSE_IP}:8088:8088" # http
@@ -30,11 +30,9 @@ services:
       - "${EXPOSE_IP}:443:443"
     environment:
       - DEMO_DOMAIN
-      - WORK_DOMAIN
     volumes:
       - "./janus-gateway/html:/usr/src/${DEMO_DOMAIN}" # demos
-      - "./work:/usr/src/${WORK_DOMAIN}" # work
-      - "./janus-gateway/html/janus.js:/usr/src/${WORK_DOMAIN}/js/janus.js:ro" # js api for work
       - ./docker-containers/ssl-certs:/etc/nginx/deploy/ssl-certs
       - ./docker-containers/nginx/templates:/etc/nginx/templates
+      - ./docker-containers/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./docker-logs/nginx/log:/var/log/nginx

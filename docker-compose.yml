@@ -17,10 +17,12 @@ services:
     volumes:
       - ./docker-containers/ssl-certs:/usr/local/etc/ssl-certs
       - ./docker-containers/janus/janus.jcfg:/usr/local/etc/janus/janus.jcfg
+      - ./docker-containers/janus/janus.plugin.streaming.jcfg:/usr/local/etc/janus/janus.plugin.streaming.jcfg
       - ./docker-containers/janus/janus.eventhandler.sampleevh.jcfg:/usr/local/etc/janus/janus.eventhandler.sampleevh.jcfg
       - ./docker-containers/janus/janus.transport.http.jcfg:/usr/local/etc/janus/janus.transport.http.jcfg
       - ./docker-containers/janus/janus.transport.websockets.jcfg:/usr/local/etc/janus/janus.transport.websockets.jcfg
       - ./docker-logs/janus/log:/var/log
+      #- ./test-video-to-stream.mp4:/usr/local/share/janus/streams/test-video-to-stream.mp4 # only audio files, doesn't work
   #
   # nginx for demo apps
   nginx:

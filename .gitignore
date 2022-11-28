@@ -5,3 +5,4 @@ docker-containers/ssl-certs/*
 .idea/
 .env
 janus-gateway/
+test-video-to-stream.mp4
